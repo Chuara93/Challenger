@@ -8,8 +8,6 @@
     @media only screen and (max-width: 600px) {
          .criptografar{
             flex-direction: column;
-               position: static;
-        text-align: center;
     }
         }
         .container{
