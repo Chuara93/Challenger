@@ -5,14 +5,7 @@ function validarTexto() {
     var mensagemValidacao = document.getElementById("mensagemValidacao");
 
     // Verifica se o texto contém letras maiúsculas ou caracteres especiais
-    if (/[A-Z]/.test(texto) || /[^A-Za-z0-9\s]/.test(texto)) {
-        mensagemValidacao.textContent = "Somente letras minúsculas e números são permitidos.";
-        return false;
-    } else {
-        mensagemValidacao.textContent = "";
-        return true;
-    }
-}
+ 
 
 var textareaCriptografado; // Variável global para armazenar a textarea criptografada
 
