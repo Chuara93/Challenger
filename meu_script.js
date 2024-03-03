@@ -1,11 +1,16 @@
-
-
 function validarTexto() {
     var texto = document.getElementById("textoInput").value;
     var mensagemValidacao = document.getElementById("mensagemValidacao");
 
     // Verifica se o texto contém letras maiúsculas ou caracteres especiais
- 
+    if (/[A-Z]/.test(texto) || /[^A-Za-z0-9\s]/.test(texto)) {
+        mensagemValidacao.textContent = "Somente letras minúsculas e números são permitidos.";
+        return false;
+    } else {
+        mensagemValidacao.textContent = "";
+        return true;
+    }
+}
 
 var textareaCriptografado; // Variável global para armazenar a textarea criptografada
 
@@ -22,11 +27,7 @@ function criptografar() {
         }
 
         // Se a textarea já existir, remova-a antes de criar uma nova
-        if (textareaCriptografado) {
-            textareaCriptografado.remove();
-        if (textareaDescriptografado) {
-            textareaDescriptografado.remove();
-        }}
+    
        
 
         textareaCriptografado = document.createElement("textarea");
@@ -73,3 +74,4 @@ function Copiar() {
     document.execCommand("copy");
     alert("Texto copiado para a área de transferência!");
 }
+
